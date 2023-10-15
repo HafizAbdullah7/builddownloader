@@ -3,7 +3,7 @@ const cors = require('cors');
 const ytdl = require('ytdl-core');
 const app = express();
 
-app.use(exrpress.static('build'));
+app.use(express.static('build'));
 
 app.get('/download', (req, res) => {
   const url = req.query.url;
