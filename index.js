@@ -12,7 +12,9 @@ app.get('/download', (req, res) => {
     .pipe(res);
 });
 app.use(express.static(path.join(__dirname, "./build")));
-const PORT =process.env.PORT || 4000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT} `);
+app.get('/', (req, res) => {
+  res.send('Hello, this is the YouTube Video Downloader server!');
+});
+app.listen(4000, () => {
+  console.log('Server is running on port 4000');
 });
