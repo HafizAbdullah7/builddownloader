@@ -2,8 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const ytdl = require('ytdl-core');
 const app = express();
-
-app.use(express.static('build'));
+const path = require('path');
+app.use(express.static(path.join(__dirname, "./build")));
 
 app.get('/download', (req, res) => {
   const url = req.query.url;
